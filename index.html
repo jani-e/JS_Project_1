@@ -11,14 +11,23 @@
         <h1>JS Project - To do list</h1>
         <main>
             <div id="listPadding">
-                <h2>Todo List</h2> <!--Replace with FORMS: includes enter-->
-                <input type="text" id="todoInput" placeholder="Write here.">
-                <span onclick="addRow()" id="addButton">Add to list</span>
+                <h2>Todo List</h2>
 
-                <ul id="listItems">
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                </ul>
+                <form id="todoForm" name="todoForm" action="#" onsubmit="return validateForm(), addTodoItem(event)">
+                    <input type="text" id="todoInput" name="todoInput" placeholder="Write task here.">
+                    <input type="submit" value="Add">
+                </form>
+                <!--add css here, padding?-->
+                <div id="name">
+                    <ul id="todoList">
+                    </ul>
+                </div>
+
+                <span>x items left</span>
+                <button>All</button>
+                <button>Active</button>
+                <button>Completed</button>
+                <button>Clear completed</button>
             </div>
         </main>
     </body>

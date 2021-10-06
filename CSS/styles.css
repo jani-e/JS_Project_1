@@ -1,9 +1,14 @@
 body {
-    background-image: url("https://d1sr9z1pdl3mb7.cloudfront.net/wp-content/uploads/2021/05/07132852/AD2ECCDF-EB13-4FBA-A663-89987E4FEEF0.jpeg"); /* replace */
-    background-repeat: no-repeat;
+    /*background-image: url("test2.png"); /* replace */
+    /*background-repeat: no-repeat;*/
+    background-color: rgb(73, 197, 255);
+    background-size: cover;
 }
 h1 {
     margin: 40px;
+}
+h2 {
+    text-align: center;
 }
 main {
     margin: 0px 40px;
@@ -13,7 +18,7 @@ main {
     backdrop-filter: blur(5px);
 }
 #listPadding {
-    padding: 10px;
+    padding: 20px;
 }
 #addButton {
     background-color: white;
@@ -25,5 +30,5 @@ ul {
 }
 li {
     padding: 5px 30px;
-    /*background-color: darkred; /*temp*/
+    /*background-color: rgb(50, 138, 238); /*temp*/
 }
