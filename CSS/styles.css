@@ -1,5 +1,5 @@
 body {
-    /*background-image: url("test2.png"); /* replace */
+    background-image: url("../images/favicon.ico"); /* replace */
     /*background-repeat: no-repeat;*/
     background-color: rgb(73, 197, 255);
     background-size: cover;
