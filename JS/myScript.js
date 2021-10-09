@@ -3,7 +3,12 @@ var formInput = document.forms["todoForm"]["todoInput"]; //variable to access fo
 
 function addTodoItem() { //function to add form value to the todoarray and localstorage
     var formValue = formInput.value; //user given value in the form to submit
-    todoArray.push(formValue); //adds value to the array list
+    var itemObject = {
+        itemId: Date.now(),
+        name: formValue,
+        completed: false
+    };
+    todoArray.push(itemObject); //adds value to the array list
     saveLocalStorage(todoArray); //adds current form array to the localstorage function
     todoInput.value = ""; //changes input field back to empty
 }
@@ -29,7 +34,14 @@ function printArrayToHtml(array) { //function to print todo list items on the pa
     for (let index = 0; index < array.length; index++) { //loop through array
         var li = document.createElement("li"); //create element li
         li.setAttribute("class", "todoItem"); //adds class "todoItem" to each li
-        var liNode = document.createTextNode(array[index]); //create a textnode from current index value in the array
+        if (!document.createTextNode(array[index].completed)) {
+            li.setAttribute("class", "crossOver");
+        }
+        li.setAttribute("id", array[index].itemId);
+        li.addEventListener('click', function() {
+            toggleCheck(array[index].itemId);
+        });
+        var liNode = document.createTextNode(array[index].name); //create a textnode from current index value in the array
         li.appendChild(liNode); //add linode to li
         ul.appendChild(li); //add new valued li to existing ul
     }
@@ -53,7 +65,19 @@ function loadLocalStorage() { //loads array from localstorage
 loadLocalStorage(); //load localstorage initially when opening the page
 //localStorage.removeItem("savedArray");
 
+function toggleCheck(itemId) {
+    console.log("test");
+    var temp = document.getElementById(itemId);
+    if (temp.classList.contains("crossOver")) {
+        temp.setAttribute("class", "todoItem");
+    } else {
+        temp.setAttribute("class", "todoItem crossOver");
+    }
+}
+
+
 //eventListener for clicking li objects & crossOver toggle for them
+/*
 var todoItems = document.getElementsByClassName("todoItem"); //retrieve todo array for toggling
 for (let index = 0; index < todoItems.length; index++) { //go through whole list and add each an eventListener
     todoItems[index].addEventListener("click", function(){ //when item in the list is clicked do the following:
@@ -65,7 +89,7 @@ for (let index = 0; index < todoItems.length; index++) { //go through whole list
         }
     }); //bug: after adding item, page has to be reloaded for toggle
 }
-
+*/
 function clearCompleted() {
 
 }
