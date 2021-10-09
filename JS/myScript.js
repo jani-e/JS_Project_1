@@ -13,8 +13,8 @@ function validateForm(event) { //validates form entry and if true activates func
     var formValue = formInput.value; //user given value in the form to submit
     if (formValue == "" || formValue == null || formValue.length < 3) { //checks if given value is empty or its character length is shorter than 4
         alert("Task can't be empty or shorter than 3 characters!") //greets user with error message
-        // @@@@@ todo: add error highlight to textfield
-        todoInput.value = ""; //changes input field back to empty
+        formInput.style.borderColor = "red"; //highlights input textfield if value is invalid
+        todoInput.value = ""; //changes input textfield back to empty
         return false; //stops form from continuing
     }
     addTodoItem(); //after validation calls function to add form value to the todoarray and localstorage
@@ -25,6 +25,7 @@ function printArrayToHtml(array) { //function to print todo list items on the pa
     ul.innerHTML = ""; //empty existing ul so the page doesn't duplicate array li values on the page
     for (let index = 0; index < array.length; index++) { //loop through array
         var li = document.createElement("li"); //create element li
+        li.setAttribute("class", "todoItem"); //adds class "todoItem" to each li
         var liNode = document.createTextNode(array[index]); //create a textnode from current index value in the array
         li.appendChild(liNode); //add linode to li
         ul.appendChild(li); //add new valued li to existing ul
@@ -33,7 +34,7 @@ function printArrayToHtml(array) { //function to print todo list items on the pa
 
 function saveLocalStorage(todoArray) { //saves given array to localstorage
     localStorage.setItem("savedArray", JSON.stringify(todoArray)); //saves todo array to the localstorage
-    printArrayToHtml(todoArray); //print array function
+    printArrayToHtml(todoArray); //print array function, needed after user value is given to update the page todolist
 }
 
 function loadLocalStorage() { //loads array from localstorage
@@ -48,6 +49,20 @@ function loadLocalStorage() { //loads array from localstorage
 
 loadLocalStorage(); //load localstorage initially when opening the page
 //localStorage.removeItem("savedArray");
+
+//eventListener for clicking li objects
+var todoItems = document.getElementsByClassName("todoItem");
+for (let index = 0; index < todoItems.length; index++) {
+    todoItems[index].addEventListener("click", function(){
+        console.log(todoItems[index])
+    });
+    
+}
+
+
+function clearCompleted() {
+    console.log("test");
+}
 
 //adding a new item resets localStorage from previoue session (after refresh), seems ok now
 //check also loadLocalStorage if statement, related?
