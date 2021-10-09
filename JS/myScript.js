@@ -53,10 +53,10 @@ function loadLocalStorage() { //loads array from localstorage
 loadLocalStorage(); //load localstorage initially when opening the page
 //localStorage.removeItem("savedArray");
 
-//eventListener for clicking li objects
-var todoItems = document.getElementsByClassName("todoItem");
-for (let index = 0; index < todoItems.length; index++) {
-    todoItems[index].addEventListener("click", function(){
+//eventListener for clicking li objects & crossOver toggle for them
+var todoItems = document.getElementsByClassName("todoItem"); //retrieve todo array for toggling
+for (let index = 0; index < todoItems.length; index++) { //go through whole list and add each an eventListener
+    todoItems[index].addEventListener("click", function(){ //when item in the list is clicked do the following:
         //console.log(todoItems[index]) //testing
         if (todoItems[index].classList.contains("crossOver")) { //if item contains class crossOver
             todoItems[index].setAttribute("class", "todoItem"); //if true: remove it
@@ -64,7 +64,6 @@ for (let index = 0; index < todoItems.length; index++) {
             todoItems[index].setAttribute("class", "todoItem crossOver"); //if false: add it
         }
     });
-    
 }
 
 //clears everything atm
