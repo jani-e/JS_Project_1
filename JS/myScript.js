@@ -17,6 +17,9 @@ function validateForm(event) { //validates form entry and if true activates func
         todoInput.value = ""; //changes input textfield back to empty
         return false; //stops form from continuing
     }
+    if (formInput.style.borderColor = "red") { //after successful value, return textfield color to default state
+        formInput.style.borderColor = ""; //default state for bordercolor
+    }
     addTodoItem(); //after validation calls function to add form value to the todoarray and localstorage
 }
 
