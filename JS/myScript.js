@@ -47,9 +47,9 @@ function printArrayToHtml(array) { //generates todolist items on the page with a
     }
 }
 
-function saveLocalStorage(todoArray) { //saves given array to localstorage
-    localStorage.setItem("savedArray", JSON.stringify(todoArray)); //saves todo array to the localstorage
-    printArrayToHtml(todoArray); //print array function, needed after user value is given to update the page todolist
+function saveLocalStorage(array) { //saves given array to localstorage
+    localStorage.setItem("savedArray", JSON.stringify(array)); //saves todo array to the localstorage
+    printArrayToHtml(array); //print array function, needed after user value is given to update the page todolist
 }
 
 function loadLocalStorage() { //loads array from localstorage
@@ -58,8 +58,7 @@ function loadLocalStorage() { //loads array from localstorage
     /*if (array == null) { //if array is empty, return @@@ check if this is working. seems ok without, remove later
         return; //stop the function from continueing
     }*/
-    todoArray = array; //replace initial todo array with loaded array
-    printArrayToHtml(todoArray); //print array function, needed after user value is given to update the page todolist
+    printArrayToHtml(array); //print array function, needed after user value is given to update the page todolist
 }
 
 loadLocalStorage(); //load localstorage initially when opening the page
