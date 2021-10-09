@@ -1,5 +1,5 @@
 var todoArray = []; //stores the list in an array
-var formInput = document.forms["todoForm"]["todoInput"]; //variable to access form input element to get value from it later in other functions
+var formInput = document.forms["todoForm"]["todoTextField"]; //variable to access form input element to get value from it later in other functions
 
 function addTodoItem() { //function to add form value to the todoarray and localstorage
     var formValue = formInput.value; //user given value in the form to submit
@@ -10,16 +10,16 @@ function addTodoItem() { //function to add form value to the todoarray and local
     };
     todoArray.push(formItemObject); //adds item object to the array list
     saveLocalStorage(todoArray); //adds current todoArray to the localstorage function
-    todoInput.value = ""; //changes form input field back to empty
+    todoTextField.value = ""; //changes form input field back to empty
 }
 
 function validateForm(event) { //validates form entry and if true activates function addTodoItem
     event.preventDefault(); //stops the form from refreshing page on submit
     var formValue = formInput.value; //user given value in the form to submit
-    if (formValue == "" || formValue == null || formValue.length < 3) { //checks if given value is empty or its character length is shorter than 3
-        alert("Task can't be empty or shorter than 3 characters!") //notifies user with error message
+    if (formValue == "" || formValue == null || formValue.length < 3 || formValue.length > 30) { //checks if given value is empty or its character length is shorter than 3 or longer than 30 characters
+        alert("Task can't be empty. Allowed character size 3-30!") //notifies user with error message
         formInput.style.borderColor = "red"; //highlights input textfield if value is invalid
-        todoInput.value = ""; //changes input textfield back to empty
+        todoTextField.value = ""; //changes input textfield back to empty
         return false; //stops function from continuing
     }
     if (formInput.style.borderColor = "red") { //after successful value, return textfield color to default state

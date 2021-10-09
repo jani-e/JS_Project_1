@@ -12,28 +12,43 @@ h2 {
 }
 main {
     margin: 0px 40px;
-    max-width: 500px;
+    width: 500px;
     border-radius: 2%;
     background-color: rgba(255, 255, 255, .15);  
     backdrop-filter: blur(5px);
+}
+#todoTextField {
+    width: 300px;
+    height: 30px;
+    border: 2px black solid;
+    padding-left: 10px;
+
 }
 #listPadding {
     padding: 20px;
 }
 #addButton {
+    width: 140px;
+    height: 36px;
     background-color: white;
+    border: 2px black solid;
 }
 ul {
     list-style-type: none;
-    margin: 0px;
+    margin: 5px 0px;
     padding: 0px;
 }
 li {
-    padding: 5px 30px;
-    /*background-color: rgb(50, 138, 238); /*temp*/
+    margin: 2px 0px;
+    padding: 10px;
+    background-color: rgb(200, 200, 200); /*change after background*/
+}
+li:nth-child(odd) {
+    background-color: rgb(255, 255, 255); /*change after background*/
 }
 
 .crossOver {
     text-decoration: line-through;
     text-decoration-color: red;
+    background-color: rgba(255, 255, 255, 0.15) !important; 
 }
