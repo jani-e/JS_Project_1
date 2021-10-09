@@ -63,11 +63,15 @@ for (let index = 0; index < todoItems.length; index++) { //go through whole list
         } else {
             todoItems[index].setAttribute("class", "todoItem crossOver"); //if false: add it
         }
-    });
+    }); //bug: after adding item, page has to be reloaded for toggle
+}
+
+function clearCompleted() {
+
 }
 
 //clears everything atm
-function clearCompleted() {
+function clearAll() {
     todoArray.length = 0;
     saveLocalStorage(todoArray);
 }
