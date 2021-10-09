@@ -59,9 +59,10 @@ for (let index = 0; index < todoItems.length; index++) {
     
 }
 
-
+//clears everything atm
 function clearCompleted() {
-    console.log("test");
+    todoArray.length = 0;
+    saveLocalStorage(todoArray);
 }
 
 //adding a new item resets localStorage from previoue session (after refresh), seems ok now
