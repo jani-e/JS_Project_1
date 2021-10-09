@@ -32,3 +32,8 @@ li {
     padding: 5px 30px;
     /*background-color: rgb(50, 138, 238); /*temp*/
 }
+
+.crossOver {
+    text-decoration: line-through;
+    text-decoration-color: red;
+}

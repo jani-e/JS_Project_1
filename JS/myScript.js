@@ -57,7 +57,12 @@ loadLocalStorage(); //load localstorage initially when opening the page
 var todoItems = document.getElementsByClassName("todoItem");
 for (let index = 0; index < todoItems.length; index++) {
     todoItems[index].addEventListener("click", function(){
-        console.log(todoItems[index])
+        //console.log(todoItems[index]) //testing
+        if (todoItems[index].classList.contains("crossOver")) { //if item contains class crossOver
+            todoItems[index].setAttribute("class", "todoItem"); //if true: remove it
+        } else {
+            todoItems[index].setAttribute("class", "todoItem crossOver"); //if false: add it
+        }
     });
     
 }
