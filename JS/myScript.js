@@ -1,16 +1,17 @@
 var todoArray = []; //stores the list in an array
+var formInput = document.forms["todoForm"]["todoInput"];
 
 function addTodoItem() {
-    var inputItem = document.forms["todoForm"]["todoInput"].value; //user given value in the form to submit
-    todoArray.push(inputItem); //adds value to the array list
+    var formValue = formInput.value; //user given value in the form to submit
+    todoArray.push(formValue); //adds value to the array list
     saveLocalStorage(todoArray);
     todoInput.value = ""; //changes input field back to empty
 }
 
 function validateForm(event) { //validates form entry and if true activates function addTodoItem
     event.preventDefault(); //stops the form from refreshing page on submit
-    var inputValue = document.forms["todoForm"]["todoInput"].value;
-    if (inputValue == "" || inputValue == null || inputValue.length < 3) { //checks if given value is empty or its character length is shorter than 4
+    var formValue = formInput.value;
+    if (formValue == "" || formValue == null || formValue.length < 3) { //checks if given value is empty or its character length is shorter than 4
         alert("Task can't be empty or shorter than 3 characters!") //greets user with error message
         // @@@@@ todo: add error highlight to textfield
         todoInput.value = ""; //changes input field back to empty
@@ -21,6 +22,7 @@ function validateForm(event) { //validates form entry and if true activates func
 
 function printArrayToHtml(array) {
     var ul = document.getElementById("todoItems"); // access ul element in html
+    ul.innerHTML = ""; //empty existing ul so the page doesn't duplicate array li values on the page
     for (let index = 0; index < array.length; index++) { //loop through array
         var li = document.createElement("li"); //create element li
         var liNode = document.createTextNode(array[index]); //create a textnode from current index value in the array
@@ -40,12 +42,13 @@ function loadLocalStorage() {
     if (array == null) {
         return;
     }
-    printArrayToHtml(array);
+    todoArray = array;
+    printArrayToHtml(todoArray);
 }
 
 loadLocalStorage();
 //localStorage.removeItem("savedArray");
 
-//adding a new item resets localStorage from previoue session (after refresh)
+//adding a new item resets localStorage from previoue session (after refresh), seems ok now
 //check also loadLocalStorage if statement, related?
 
