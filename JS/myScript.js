@@ -77,7 +77,14 @@ function toggleCheck(itemId) { //toggle's the itemCheck state when click event h
 }
 
 function clearCompleted() { //function to clear checked li items
-
+    var newArray = []; //new empty array
+    for (let index = 0; index < todoArray.length; index++) { //go through existing todoarray
+        if (!todoArray[index].itemChecked) { //if todoarray itemchecked value is false (not checked)
+            newArray.push(todoArray[index]); //-> add it to this new array
+        }
+    }
+    todoArray = newArray; //replace old todo array with new array
+    saveLocalStorage(newArray); //save new array to the localstorage
 }
 
 //clears everything TESTING button
