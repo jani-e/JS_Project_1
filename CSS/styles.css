@@ -12,23 +12,23 @@ h2 {
 }
 main {
     margin: 0px 40px;
-    width: 500px;
+    width: 600px;
     border-radius: 2%;
     background-color: rgba(255, 255, 255, .15);  
     backdrop-filter: blur(5px);
 }
 #todoTextField {
-    width: 300px;
+    width: 387px;
     height: 30px;
     border: 2px black solid;
     padding-left: 10px;
-
+    margin-right: 40px;
 }
 #listPadding {
     padding: 20px;
 }
 #addButton {
-    width: 140px;
+    width: 113px;
     height: 36px;
     background-color: white;
     border: 2px black solid;
@@ -36,7 +36,7 @@ main {
 ul {
     list-style-type: none;
     margin: 5px 0px;
-    padding: 0px;
+    padding: 10px 0px;
 }
 li {
     margin: 2px 0px;
@@ -46,9 +46,43 @@ li {
 li:nth-child(odd) {
     background-color: rgb(255, 255, 255); /*change after background*/
 }
-
 .crossOver {
     text-decoration: line-through;
     text-decoration-color: red;
     background-color: rgba(255, 255, 255, 0.15) !important; 
+}
+#buttons {
+
+    height: 36px;
+}
+#buttonLeft {
+    float: left;
+    width: 25%;
+    height: 36px;
+}
+#itemCounter {
+    display: block;
+    padding: 5px;
+    height: 36px;
+    font-size: 20px;
+}
+#buttonsMiddle {
+    float: left;
+    width: 50%;
+}
+#buttonsMiddle button {
+    width: 85px;
+    height: 36px;
+    background-color: white;
+    border: 2px black solid;
+}
+#buttonRight {
+    float: right;
+    width: 25%;
+}
+#buttonRight button {
+    float: right;
+    height: 36px;
+    background-color: white;
+    border: 2px black solid;
 }

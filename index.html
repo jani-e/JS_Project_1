@@ -24,14 +24,22 @@
                     </ul>
                 </div>
 
-                <span id="itemCounter">No tasks left</span>
-                <button>All</button>
-                <button>Active</button>
-                <button>Completed</button>
-                <button onclick="clearCompleted()">Clear completed</button>
-                <button onclick="clearAll()">TESTCLEARALL</button>
+                <div id="buttons">
+                    <div id="buttonLeft">
+                        <span id="itemCounter">No tasks left</span>
+                    </div>
+                    <div id="buttonsMiddle">
+                        <button>All</button>
+                        <button>Active</button>
+                        <button>Completed</button>
+                    </div>
+                    <div id="buttonRight">
+                        <button onclick="clearCompleted()">Clear completed</button>
+                    </div>
+                </div>
             </div>
         </main>
+        <button onclick="clearAll()">TESTCLEARALL</button>
         
     </body>
 </html>
