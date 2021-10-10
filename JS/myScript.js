@@ -56,9 +56,6 @@ function saveLocalStorage(array) { //saves given array to localstorage
 function loadLocalStorage() { //loads array from localstorage
     var loadedData = localStorage.getItem("savedArray"); //retrieves data from localstorage into a variable
     var array = JSON.parse(loadedData); //parses the retrieved data to an array
-    /*if (array == null) { //if array is empty, return @@@ check if this is working. seems ok without, remove later
-        return; //stop the function from continueing
-    }*/
     printArrayToHtml(array); //print array function, needed after user value is given to update the page todolist
 }
 
@@ -93,6 +90,4 @@ function clearAll() {
     todoArray.length = 0;
     saveLocalStorage(todoArray);
 }
-
-//check also loadLocalStorage if statement, related?
 
