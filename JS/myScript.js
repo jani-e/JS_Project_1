@@ -46,6 +46,7 @@ function printArrayToHtml(array) { //generates todolist items on the page with a
         li.appendChild(liNode); //add linode to li
         ul.appendChild(li); //add new valued li to existing ul
     }
+    updateCounter(); //calls function to update counter info
 }
 
 function saveLocalStorage(array) { //saves given array to localstorage
@@ -91,3 +92,25 @@ function clearAll() {
     saveLocalStorage(todoArray);
 }
 
+function updateCounter() { //function to update counter info
+    var counter = document.getElementById("itemCounter"); //retrieves counter span for manipulation
+    var itemCount = 0; //initially 0 value for item counter
+
+    for (let index = 0; index < todoArray.length; index++) { //loops through array list
+        if (todoArray[index].itemChecked == false) { //if array item's check status is notchecked (false)
+            itemCount++; //adds one to the item counter
+        }    
+    }
+
+    switch (itemCount) { //switch statement for item count
+        case 0: //if itemcounter is 0
+            counter.innerHTML = "No tasks left"; //change counter span element to this text
+            break; //stop switch from continuing
+        case 1: // if itemcounter is 1
+            counter.innerHTML = "1 task left"; //change counter span element to this text
+            break; //stop switch from continuing
+        default: //by default any other value is shown
+            counter.innerHTML = itemCount + " tasks left"; //change counter span element showing current item count and this text
+            break; //stop switch from continuing
+    }
+}
