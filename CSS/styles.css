@@ -1,8 +1,10 @@
 body {
-    background-image: url("../images/favicon.ico"); /* replace */
-    /*background-repeat: no-repeat;*/
-    background-color: rgb(73, 197, 255);
-    background-size: cover;
+    /*background-image: url("https://cdn.pixabay.com/photo/2020/04/07/08/34/city-5012531_960_720.jpg");*/
+    /*background-image: url("https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_960_720.jpg");*/
+    background-image: url("https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_960_720.jpg");
+    background-repeat: no-repeat;
+    background-color: black;
+
 }
 h1 {
     margin: 40px;
@@ -18,10 +20,10 @@ main {
     backdrop-filter: blur(5px);
 }
 #todoTextField {
-    width: 387px;
+    width: 377px;
     height: 30px;
     border: 2px black solid;
-    padding-left: 10px;
+    padding-left: 20px;
     margin-right: 40px;
 }
 #listPadding {
@@ -40,7 +42,7 @@ ul {
 }
 li {
     margin: 2px 0px;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: rgb(200, 200, 200); /*change after background*/
 }
 li:nth-child(odd) {
