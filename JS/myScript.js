@@ -16,6 +16,7 @@ function addTodoItem() { //function to add form value to the todoarray and local
 function validateForm(event) { //validates form entry and if true activates function addTodoItem
     event.preventDefault(); //stops the form from refreshing page on submit
     var formValue = formInput.value; //user given value in the form to submit
+    formValue = formValue.trim(); //trims empty spaces from before and after the value
     if (formValue == "" || formValue == null || formValue.length < 3 || formValue.length > 30) { //checks if given value is empty or its character length is shorter than 3 or longer than 30 characters
         alert("Task can't be empty. Allowed character size 3-30!") //notifies user with error message
         formInput.style.borderColor = "red"; //highlights input textfield if value is invalid
