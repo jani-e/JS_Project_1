@@ -1,10 +1,13 @@
 body {
-    /*background-image: url("https://cdn.pixabay.com/photo/2020/04/07/08/34/city-5012531_960_720.jpg");*/
-    /*background-image: url("https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_960_720.jpg");*/
-    background-image: url("https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_960_720.jpg");
+    background-image: url("https://cdn.pixabay.com/photo/2020/04/07/08/34/city-5012531_960_720.jpg");
     background-repeat: no-repeat;
     background-color: black;
-
+}
+header {
+    width: 800px; /*put this in main div?*/
+}
+#bgForm {
+    float: right;
 }
 h1 {
     margin: 40px;
