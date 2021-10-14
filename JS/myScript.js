@@ -93,6 +93,7 @@ function showAll() { //function to show all items
     for (let index = 0; index < liElements.length; index++) { //loop through liElements
         liElements[index].style.display = "block"; //change li style to block (visible)
     }
+    updateCounter(); //update counter info
 }
 
 function showActive() { //function to show only active ones
@@ -103,6 +104,7 @@ function showActive() { //function to show only active ones
             liElements[index].style.display = "block"; //change li style to block (visible)
         }
     }
+    updateCounter(); //update counter info
 }
 
 function showCompleted() { //function to show only completed ones
@@ -113,6 +115,15 @@ function showCompleted() { //function to show only completed ones
             liElements[index].style.display = "block"; //change li style to block (visible)
         }
     }
+    //changes counter info to show how many items are completed
+    var counter = document.getElementById("itemCounter"); //retrieves counter span for manipulation
+    var itemCount = 0; //initially 0 value for item counter
+    for (let index = 0; index < todoArray.length; index++) { //loops through array list
+        if (todoArray[index].itemChecked == true) { //if array item's check status is notchecked (false)
+            itemCount++; //adds one to the item counter
+        }    
+    }
+    counter.innerHTML = itemCount + " task(s) done"; //changes counter info
 }
 
 function updateCounter() { //function to update counter info
