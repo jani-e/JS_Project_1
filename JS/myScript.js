@@ -57,6 +57,7 @@ function saveLocalStorage(array) { //saves given array to localstorage
 function loadLocalStorage() { //loads array from localstorage
     var loadedData = localStorage.getItem("savedArray"); //retrieves data from localstorage into a variable
     var array = JSON.parse(loadedData); //parses the retrieved data to an array
+    todoArray = array; //save parsed array to todoArray, otherwise on load the current array is forgotten
     printArrayToHtml(array); //print array function, needed after user value is given to update the page todolist
 }
 
@@ -86,10 +87,32 @@ function clearCompleted() { //function to clear checked li items
     saveLocalStorage(newArray); //save new array to the localstorage
 }
 
-//clears everything TESTING button
-function clearAll() {
-    todoArray.length = 0;
-    saveLocalStorage(todoArray);
+var liElements = document.getElementsByTagName("li"); //gets all li elements, used for show All, Active and Completed functions
+
+function showAll() { //function to show all items
+    for (let index = 0; index < liElements.length; index++) { //loop through liElements
+        liElements[index].style.display = "block"; //change li style to block (visible)
+    }
+}
+
+function showActive() { //function to show only active ones
+    for (let index = 0; index < liElements.length; index++) { //loop through liElements
+        if (liElements[index].classList.contains("crossOver")) { //if item li contains class "crossOver":
+            liElements[index].style.display = "none"; //change li style to none (hidden)
+        } else { //otherwise
+            liElements[index].style.display = "block"; //change li style to block (visible)
+        }
+    }
+}
+
+function showCompleted() { //function to show only completed ones
+    for (let index = 0; index < liElements.length; index++) { //loop through liElements
+        if (!liElements[index].classList.contains("crossOver")) { //if item does NOT ! contain class "crossOver":
+            liElements[index].style.display = "none"; //change li style to none (hidden)
+        } else { //otherwise
+            liElements[index].style.display = "block"; //change li style to block (visible)
+        }
+    }
 }
 
 function updateCounter() { //function to update counter info

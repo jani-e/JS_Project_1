@@ -14,11 +14,10 @@
             <div id="listPadding">
                 <h2>Todo List</h2>
 
-                <form id="todoForm" name="todoForm" action="#" onsubmit="return validateForm(event)"> <!--On submit validate form.-->
+                <form id="todoForm" name="todoForm" action="#" onsubmit="return validateForm(event)"> <!--On submit validate form. calls function validateForm with event parameter-->
                     <input type="text" id="todoTextField" name="todoTextField" placeholder="Write task here.">
                     <input type="submit" id="addButton" value="Add task">
                 </form>
-                <!--add css here, padding?-->
                 <div>
                     <ul id="todoItems">
                     </ul>
@@ -29,17 +28,15 @@
                         <span id="itemCounter">No tasks left</span>
                     </div>
                     <div id="buttonsMiddle">
-                        <button>All</button>
-                        <button>Active</button>
-                        <button>Completed</button>
+                        <button onclick="showAll()">All</button> <!--click eventlistener for function showAll()-->
+                        <button onclick="showActive()">Active</button> <!--click eventlistener for function showAll()-->
+                        <button onclick="showCompleted()">Completed</button> <!--click eventlistener for function showAll()-->
                     </div>
                     <div id="buttonRight">
-                        <button onclick="clearCompleted()">Clear completed</button>
+                        <button onclick="clearCompleted()">Clear completed</button> <!--click eventlistener for function clearCompleted()-->
                     </div>
                 </div>
             </div>
         </main>
-        <button onclick="clearAll()">TESTCLEARALL</button>
-        
     </body>
 </html>
