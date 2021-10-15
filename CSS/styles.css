@@ -3,20 +3,30 @@ body {
     background-repeat: no-repeat;
     background-color: white;
 }
-header {
-    width: 800px; /*put this in main div?*/
-}
+
 #bgForm {
-    float: right;
+    float: left;
+    background-color: white;
+    height: 37px;
+    padding: 5px;
+    margin-left: 853px;
+    margin-top: 0px;
+    border-radius: 5%;
+}
+#bgMenu {
+    width: 80px;
 }
 h1 {
-    margin: 40px;
+    width: 800px;
+    clear: both;
+    margin-left: 300px;
+    margin-bottom: 40px;
 }
 h2 {
     text-align: center;
 }
 main {
-    margin: 0px 40px;
+    margin: 0px 150px;
     width: 600px;
     border-radius: 2%;
     background-color: rgba(255, 255, 255, .15);  
