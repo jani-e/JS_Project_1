@@ -4,7 +4,6 @@ var formInput = document.forms["todoForm"]["todoTextField"]; //variable to acces
 function addTodoItem() { //function to add form value to the todoarray and localstorage
     var formValue = formInput.value; //user given value in the form to submit
     var formItemObject = { //create object that contains:
-        itemId: Date.now(), //unique itemId based on current date 
         itemValue: formValue, //object's item value is users form input value
         itemChecked: false //object's check status is initially false 
     };
@@ -38,9 +37,8 @@ function printArrayToHtml(array) { //generates todolist items on the page with a
         if (array[index].itemChecked == true) { // continue if object item in current array index contains true value in object's itemCheck value
             li.classList.add("crossOver"); //adds class crossOver to the li
         }
-        li.setAttribute("id", array[index].itemId); //adds object's uniqueid to the li
         li.addEventListener('click', function() { //adds -click- event listener to the li
-            toggleCheck(array[index].itemId); //if this li is clicked, start function toggleCheck
+            toggleCheck(array[index].itemValue); //if this li is clicked, start function toggleCheck
         });
         var liNode = document.createTextNode(array[index].itemValue); //create a textnode from current index value in the array
         li.appendChild(liNode); //add linode to li
@@ -63,9 +61,9 @@ function loadLocalStorage() { //loads array from localstorage
 
 loadLocalStorage(); //load localstorage initially when opening the page
 
-function toggleCheck(itemId) { //toggle's the itemCheck state when click event happens on this specific li
+function toggleCheck(itemValue) { //toggle's the itemCheck state when click event happens on this specific li
     for (let index = 0; index < todoArray.length; index++) { //loop through todo array
-        if (todoArray[index].itemId == itemId) { //toggle state if todoarray contains the same itemid as the eventlistener
+        if (todoArray[index].itemValue == itemValue) { //toggle state if todoarray contains the same itemValue as the eventlistener
             if (todoArray[index].itemChecked) { //if item's check value is true:
                 todoArray[index].itemChecked = false; //change it to false
             } else { //otherwise
