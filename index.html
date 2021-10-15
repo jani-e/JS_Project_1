@@ -6,19 +6,18 @@
         <link rel="stylesheet" href="CSS/styles.css"> <!--External CSS file in CSS folder-->
         <script src="JS/myScript.js" defer></script> <!--External Javascript file in JS folder. defer executes js after page finishes parsing-->
         <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
-        <title>JS Project - To do list</title>
+        <title>JS Project: To-do List</title>
     </head>
     <body>
-            
-            <form id="bgForm" name="bgForm" method="post" action="#"> <!--extra-->
-                <label for="bgLabel">Background</label><br>
-                <select id="bgMenu" name="bgMenu" size="1">
-                    <option>City</option>
-                    <option>Road</option>
-                    <option>Beach</option>
-                </select>
-            </form>
-            <h1>JS Project - To do list</h1>
+        <form id="bgForm" name="bgForm" method="post" action="#"> <!--extra-->
+            <label for="bgLabel">Background</label><br>
+            <select id="bgMenu" name="bgMenu" size="1">
+                <option>City</option>
+                <option>Road</option>
+                <option>Beach</option>
+            </select>
+        </form>
+        <h1>JS Project: To-do list</h1>
         <main>
             <div id="listPadding">
                 <form id="todoForm" name="todoForm" action="#" onsubmit="return validateForm(event)"> <!--On submit validate form. calls function validateForm with event parameter-->
@@ -45,5 +44,8 @@
                 </div>
             </div>
         </main>
+        <footer>
+            <p>Photos from Pixabay.com</p>
+        </footer>
     </body>
 </html>

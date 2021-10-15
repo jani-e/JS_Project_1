@@ -156,7 +156,7 @@ bgForm.addEventListener('change', function() { //listen bgMenu for changes
 function updateBg() { //changes background image
     var body = document.getElementsByTagName("body"); //gets element body
     var images = [ //array of background images
-        "https://cdn.pixabay.com/photo/2020/04/07/08/34/city-5012531_960_720.jpg", //first image
+        "https://cdn.pixabay.com/photo/2018/07/18/20/25/channel-3547224_960_720.jpg", //first image
         "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_960_720.jpg", //second image
         "https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_960_720.jpg" //third image
     ];

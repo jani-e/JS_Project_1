@@ -1,9 +1,8 @@
 body {
-    background-image: url("https://cdn.pixabay.com/photo/2020/04/07/08/34/city-5012531_960_720.jpg");
+    background-image: url("https://cdn.pixabay.com/photo/2018/07/18/20/25/channel-3547224_960_720.jpg");
     background-repeat: no-repeat;
-    background-color: white;
+    background-color: ghostwhite;
 }
-
 #bgForm {
     float: left;
     background-color: white;
@@ -11,16 +10,19 @@ body {
     padding: 5px;
     margin-left: 853px;
     margin-top: 0px;
-    border-radius: 5%;
+    border-radius: 5px;
 }
 #bgMenu {
     width: 80px;
 }
 h1 {
-    width: 800px;
+    max-width: fit-content;
     clear: both;
     margin-left: 300px;
     margin-bottom: 40px;
+    background-color: aliceblue;
+    padding: 5px;
+    border-radius: 5px;
 }
 h2 {
     text-align: center;
@@ -28,8 +30,8 @@ h2 {
 main {
     margin: 0px 150px;
     width: 600px;
-    border-radius: 2%;
-    background-color: rgba(255, 255, 255, .15);  
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .25);  
     backdrop-filter: blur(5px);
 }
 #todoTextField {
@@ -68,7 +70,6 @@ li:nth-child(odd) {
     background-color: rgba(0, 0, 0, 0.3) !important; 
 }
 #buttons {
-
     height: 36px;
 }
 #buttonLeft {
@@ -101,4 +102,19 @@ li:nth-child(odd) {
     height: 36px;
     background-color: white;
     border: 2px black solid;
+}
+button:hover, #addButton:hover, #bgMenu:hover {
+    background-color: rgb(200, 200, 200) !important;
+}
+li:hover {
+    background-color: gray !important;
+}
+footer p {
+    position: absolute;
+    top: 590px;
+    left: 780px;
+    padding: 5px;
+    max-width: fit-content;
+    background-color: white;
+    border-radius: 5px;
 }
