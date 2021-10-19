@@ -22,6 +22,13 @@ function validateForm(event) { //validates form entry and if true activates func
         todoTextField.value = ""; //changes input textfield back to empty
         return false; //stops function from continuing
     }
+    for (let index = 0; index < todoArray.length; index++) { //loop through todolist array
+        if (todoArray[index].itemValue == formValue) { //if given item already exists in the todolist array ->
+            alert("Task -" + formValue + "- already exists!\nWrite something else."); //alert the user
+            formInput.style.borderColor = "red"; //highlight input textfield with red border
+            return false; //return false to stop function from continuing
+        }
+    }
     if (formInput.style.borderColor = "red") { //after successful value, return textfield color to default state
         formInput.style.borderColor = ""; //default state for bordercolor
     }
