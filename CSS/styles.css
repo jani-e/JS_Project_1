@@ -23,9 +23,6 @@ h1 {
     padding: 5px;
     border-radius: 5px;
 }
-h2 {
-    text-align: center;
-}
 main {
     margin: 0px 150px;
     width: 600px;
@@ -53,6 +50,7 @@ ul {
     list-style-type: none;
     margin: 5px 0px;
     padding: 10px 0px;
+    min-height: 45px;
 }
 li {
     margin: 2px 0px;
@@ -65,8 +63,7 @@ li:nth-child(odd) {
 .crossOver {
     text-decoration: line-through;
     text-decoration-color: red;
-    color: red;
-    background-color: rgba(0, 0, 0, 0.3) !important; 
+    background-color: rgba(50, 50, 50, 0.3) !important; 
 }
 #buttons {
     height: 36px;
@@ -106,7 +103,7 @@ button:hover, #addButton:hover, #bgMenu:hover {
     background-color: rgb(200, 200, 200) !important;
 }
 li:hover {
-    background-color: gray !important;
+    background-color: rgba(100, 100, 100, 0.5) !important;
 }
 footer p {
     position: absolute;
