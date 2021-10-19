@@ -155,20 +155,30 @@ function updateCounter() { //function to update counter info
 }
 
 //extra css background
-var bgMenu = document.forms["bgForm"]["bgMenu"].value; //get bgMenu element
 bgForm.addEventListener('change', function() { //listen bgMenu for changes
-    updateBg(); //call function updateBg on change
+    saveBg(); //call function saveBg on change
 });
 
-function updateBg() { //changes background image
+function saveBg() { //saves background image value to localstorage
+    var bgValue = document.forms["bgForm"]["bgMenu"].value;//gets user value from the bgform
+    localStorage.setItem("bg", JSON.stringify(bgValue)); //saves value in localstorage
+    updateBg(bgValue); //calls updateBg function with current user bg value
+}
+
+function loadBg() { //loads background image value from localstorage
+    var loadedBG = localStorage.getItem("bg"); //retrieves data from localstorage into a variable
+    var bgValue = JSON.parse(loadedBG); //parses the retrieved data to variable bgValue
+    updateBg(bgValue); // calls updateBg function with loaded user bg value
+}
+
+function updateBg(bgValue) { //changes background image, uses given parameter value
     var body = document.getElementsByTagName("body"); //gets element body
     var images = [ //array of background images
         "https://cdn.pixabay.com/photo/2018/07/18/20/25/channel-3547224_960_720.jpg", //first image
         "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_960_720.jpg", //second image
         "https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_960_720.jpg" //third image
     ];
-    var bgForm = document.forms["bgForm"]["bgMenu"].value; //gets chosen value from the bgform
-    switch (bgForm) { //switch statement based on current form value
+    switch (bgValue) { //switch statement based on current form value
         case "City": //if value is city
             body[0].style.backgroundImage = "url(" + images[0] + ")"; //change it to image array 0 (first image)
             break; //stop switch
@@ -183,3 +193,5 @@ function updateBg() { //changes background image
             break; //stop switch
     }
 }
+
+loadBg(); //calls function to load info from localstorage when opening/refreshing page
