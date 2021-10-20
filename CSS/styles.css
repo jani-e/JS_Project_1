@@ -15,7 +15,7 @@ body {
     width: 80px;
 }
 h1 {
-    max-width: fit-content;
+    max-width: 290px;
     clear: both;
     margin-left: 300px;
     margin-bottom: 40px;

@@ -168,6 +168,9 @@ function saveBg() { //saves background image value to localstorage
 function loadBg() { //loads background image value from localstorage
     var loadedBG = localStorage.getItem("bg"); //retrieves data from localstorage into a variable
     var bgValue = JSON.parse(loadedBG); //parses the retrieved data to variable bgValue
+    if (bgValue == null) { //if localstorage doesn't have any value
+        bgValue = "City"; //set bgvalue to city
+    }
     updateBg(bgValue); // calls updateBg function with loaded user bg value
 }
 
