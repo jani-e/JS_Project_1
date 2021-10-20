@@ -96,6 +96,7 @@ li:nth-child(odd) {
 #buttonRight button {
     float: right;
     height: 36px;
+    width: 113px;
     background-color: white;
     border: 2px black solid;
 }
