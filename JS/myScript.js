@@ -63,9 +63,9 @@ function loadLocalStorage() { //loads array from localstorage
     var loadedData = localStorage.getItem("savedArray"); //retrieves data from localstorage into a variable
     var array = JSON.parse(loadedData); //parses the retrieved data to an array
     todoArray = array; //save parsed array to todoArray, otherwise on load the current array is forgotten
-    if (todoArray == null) {
-        return;
-    } else {
+    if (todoArray == null) { //if array is empty:
+        return; //stop function
+    } else { //otherwise continue
         printArrayToHtml(array); //print array function, needed after user value is given to update the page todolist
     }
 }
