@@ -65,6 +65,7 @@ function loadLocalStorage() { //loads array from localstorage
     if (array == null) { //if array is empty:
         return; //stop function
     } else { //otherwise continue
+        todoArray = array; //saves loaded array to todoArray
         printArrayToHtml(array); //print array function, needed after user value is given to update the page todolist
     }
 }
