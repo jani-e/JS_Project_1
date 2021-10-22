@@ -175,6 +175,8 @@ function loadBg() { //loads background image value from localstorage
     if (bgValue == null) { //if localstorage doesn't have any value
         bgValue = "City"; //set bgvalue to city
     }
+    var menuValue = document.getElementById("bgMenu"); //select background image menu item -element
+    menuValue.value = bgValue; //change menu item to reflect the same value as user has in localstorage
     updateBg(bgValue); // calls updateBg function with loaded user bg value
 }
 
