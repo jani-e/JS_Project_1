@@ -23,7 +23,7 @@ function validateForm(event) { //validates form entry and if true activates func
         return false; //stops function from continuing
     }
     for (let index = 0; index < todoArray.length; index++) { //loop through todolist array
-        if (todoArray[index].itemValue == formValue) { //if given item already exists in the todolist array ->
+        if (todoArray[index].itemValue.trim() == formValue) { //if given item already exists in the todolist array ->   +trim() added to remove empty spaces from localstorage value to fix bug shown in presentation
             alert("Task -" + formValue + "- already exists!\nWrite something else."); //alert the user
             formInput.style.borderColor = "red"; //highlight input textfield with red border
             return false; //return false to stop function from continuing
