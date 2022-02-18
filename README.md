@@ -3,6 +3,10 @@ Javascript school project 1
 
 Jani Eriksson
 
+## Published website
+
+https://jani-e-project-1.netlify.app/
+
 ## Application description
 
 To-do -list where you can add tasks, cross them over and remove the crossed ones.
